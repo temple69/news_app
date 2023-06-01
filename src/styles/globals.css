@@ -1,27 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+     :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    height: 100vh;
+}
+
+.responsive_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1em;
+}
+
+.customShadow {
+    background: #ffffff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    cursor: pointer;
+    flex-wrap: wrap;
+    gap: .5em;
+}
+
+.pagination a {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #6c7ac9;
+    color: #6c7ac9;
+    margin-bottom: 6em;
+    margin-bottom: 2em;
+    position: relative;
+    top: 2em;
+    display: block;
+    padding: 1em;
+    text-align: center;
+    width: 60px;
+    border-radius: 30px;
+}
+
+.pagination__link {
+    font-weight: bold;
+}
+
+.pagination__link--active a {
+    color: #fff;
+    background: #6c7ac9;
+}
+
+.pagination__link--disabled a {
+    color: rgb(198, 197, 202);
+    border: 1px solid rgb(198, 197, 202);
+    cursor: not-allowed;
 }
