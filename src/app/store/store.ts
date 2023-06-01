@@ -1,5 +1,6 @@
 import {Action,configureStore,ThunkAction} from '@reduxjs/toolkit'
 import newsReducer from '@/features/News/newsSlice'
+//initializing and Creating redux store
 export const store = configureStore({
     reducer:{
         newsData:newsReducer
