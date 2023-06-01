@@ -25,7 +25,6 @@ import { useRouter } from "next/router";
 const PER_PAGE = 10;
 //User-defined types
 import { newsType } from "../../types/types";
-import { Poppins } from "next/font/google";
 
 const News = ({ isNotNews }: newsType) => {
   //State management from redux toolkit
@@ -80,11 +79,11 @@ const News = ({ isNotNews }: newsType) => {
 
   return (
     /*Css Classes are updated dynamically based on the `isNotNews` state  */
-    <section className="px-10 pt-4">
+    <section className="px-10 pt-4 min-w-[350px] max-w-[100%]">
       {/* Renders the modal component depending on the state */}
       {loading ? <Modal /> : ""}
       <form
-        className={isNotNews ? "grid grid-cols-1" : `grid grid-cols-2 gap-10`}
+        className={isNotNews ? "grid grid-cols-1" : `grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10`}
         onSubmit={submitHandler}
       >
         {isNotNews ? (
@@ -94,28 +93,26 @@ const News = ({ isNotNews }: newsType) => {
             Which Topic Would You like to Read About Today
             <input
               type="text"
-              className="border block w-[80%] h-10 rounded-lg px-2"
+              className="border block w-full sm:w-full md:w-[90%] h-10 rounded-lg px-2"
               ref={searchRef}
             />
-            <button className="h-10 border bg-green-600 text-white rounded-lg w-[80%] my-3">
+            <button className="h-10 border bg-green-600 text-white rounded-lg w-full sm:w-full md:w-[90%] my-3">
               Get-News-Article
             </button>
           </label>
         )}
-        <label htmlFor="">
+        <label>
           Filter By News Source:
           <select
-            name=""
-            id=""
             className={
               isNotNews
                 ? "border w-full mb-6 block h-10 rounded-lg"
-                : "border w-[80%] my-3 block h-10 rounded-lg px -2"
+                : "border w-full sm:w-full md:w-[90%] my-3 block h-10 rounded-lg px-2 relative"
             }
             onChange={filterNewsBySourceHandler}
           >
             <option value=""></option>
-            {newsSources.map((source) => (
+            { newsSources.length === 0?<option value="">No Sources Found Yet</option>:newsSources.map((source) => (
               <option
                 value={source.id}
                 title={source.description}
@@ -128,7 +125,7 @@ const News = ({ isNotNews }: newsType) => {
         </label>
       </form>
 
-      <div className="responsive_grid mb-4">
+      <div className=" grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-3 mb-4">
         {CurrentPageData.length === 0 ? (
           <p className="text-center text-[20px] text-[red]">{`${errorMessage}`}</p>
         ) : (
