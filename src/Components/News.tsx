@@ -1,6 +1,6 @@
 //Redux Toolkit Hooks
 import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
-Poppins
+
 
 //React Events
 import React, {
@@ -17,7 +17,7 @@ import {
   getAllNewsSources,
 } from "@/features/News/newsSlice";
 //React Components
-import Newslist from "./Newlist";
+import Newslist from "./Newslist";
 import Pagination from "./Pagination";
 import Modal from "./Modal/Modal";
 import { useRouter } from "next/router";
