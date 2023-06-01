@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import Navbar from "../Navbar";
 interface ParentComponentProps {
   children: ReactNode;
@@ -7,8 +7,8 @@ interface ParentComponentProps {
 const Layout = ({ children }: ParentComponentProps) => {
   return (
     <>
-      <Navbar />
-      <main>{children}</main>
+    
+      <main className="min-w-[300px]">{children}</main>
     </>
   );
 };
