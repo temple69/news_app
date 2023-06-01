@@ -130,7 +130,7 @@ const News = ({ isNotNews }: newsType) => {
 
       <div className="responsive_grid mb-4">
         {CurrentPageData.length === 0 ? (
-          <p className="text-center text=[20px] text-red">{`${errorMessage}`}</p>
+          <p className="text-center text-[20px] text-[red]">{`${errorMessage}`}</p>
         ) : (
           CurrentPageData.map((article) => (
             <Newslist newsList={article} isLoading={loading} />
