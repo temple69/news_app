@@ -142,7 +142,6 @@ const newsSlice = createSlice({
           //updates newsSources state if no data was queried with the api
           const { sources } = payload;
           state.newsSources = sources;
-          console.log(isRequestExceeded);
         }
       })
       //updates state when promise returned by createAsyncThunk function is rejected
