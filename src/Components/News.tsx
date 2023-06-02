@@ -1,7 +1,6 @@
 //Redux Toolkit Hooks
 import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 
-
 //React Events
 import React, {
   FormEvent,
@@ -56,6 +55,7 @@ const News = ({ isNotNews }: newsType) => {
     }
   }, [newsSource, articleId]);
   /* This function is used by the react-paginate component to know the current page number index that was clicked by user */
+
   const handlePageClick = (page: { selected: number }) => {
     setCurrentPage(page.selected);
   };
@@ -83,7 +83,11 @@ const News = ({ isNotNews }: newsType) => {
       {/* Renders the modal component depending on the state */}
       {loading ? <Modal /> : ""}
       <form
-        className={isNotNews ? "grid grid-cols-1" : `grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10`}
+        className={
+          isNotNews
+            ? "grid grid-cols-1"
+            : `grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10`
+        }
         onSubmit={submitHandler}
       >
         {isNotNews ? (
@@ -112,15 +116,19 @@ const News = ({ isNotNews }: newsType) => {
             onChange={filterNewsBySourceHandler}
           >
             <option value=""></option>
-            { newsSources.length === 0?<option value="">No Sources Found Yet</option>:newsSources.map((source) => (
-              <option
-                value={source.id}
-                title={source.description}
-                key={source.id}
-              >
-                {source.name}
-              </option>
-            ))}
+            {newsSources.length === 0 ? (
+              <option value="">No Sources Found Yet</option>
+            ) : (
+              newsSources.map((source) => (
+                <option
+                  value={source.id}
+                  title={source.description}
+                  key={source.id}
+                >
+                  {source.name}
+                </option>
+              ))
+            )}
           </select>
         </label>
       </form>
@@ -137,12 +145,14 @@ const News = ({ isNotNews }: newsType) => {
 
       {loading ? (
         ""
-      ) : (
+      ) : !error ? (
         <Pagination
           pageCount={pageCount}
           handlePageClick={handlePageClick}
           isArrayEmpty={error}
         />
+      ) : (
+        ""
       )}
     </section>
   );
