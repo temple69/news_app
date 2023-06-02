@@ -10,14 +10,14 @@ const Pagination = ({
   return (
     <div>
       <ReactPaginate
-        previousLabel={!isArrayEmpty ? "← " : ""}
-        nextLabel={!isArrayEmpty ? "→" : ""}
+        previousLabel={"← "}
+        nextLabel={"→"}
         pageCount={pageCount}
         onPageChange={handlePageClick}
-        containerClassName={!isArrayEmpty ? "pagination" : ""}
+        containerClassName={"pagination"}
         previousLinkClassName={"pagination__link"}
         nextLinkClassName={"pagination__link"}
-        disabledClassName={!isArrayEmpty ? "pagination__link--disabled" : ""}
+        disabledClassName={"pagination__link--disabled"}
         activeClassName={"pagination__link--active"}
         marginPagesDisplayed={2}
         pageRangeDisplayed={pageCount}
