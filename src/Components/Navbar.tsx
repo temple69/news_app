@@ -25,7 +25,7 @@ const Navbar = () => {
               }`}
             >
               {links.map((link) => (
-                <li>
+                <li key={link.link}>
                   <Link
                     href={link.link}
                     passHref
