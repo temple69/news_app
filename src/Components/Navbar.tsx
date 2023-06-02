@@ -4,12 +4,12 @@ import { useState } from "react";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const links = [
-    { name: "Home", link: "/" },
-    { name: "News", link: "/News" },
-    { name: "Science", link: "/Science" },
-    { name: "Innovation", link: "/Innovation" },
-    { name: "Technology", link: "/Technology" },
-    { name: "Blockchain", link: "/Blockchain" },
+    { id: 1, name: "Home", link: "/" },
+    { id: 2, name: "News", link: "/News" },
+    { id: 3, name: "Science", link: "/Science" },
+    { id: 4, name: "Innovation", link: "/Innovation" },
+    { id: 5, name: "Technology", link: "/Technology" },
+    { id: 6, name: "Blockchain", link: "/Blockchain" },
   ];
   return (
     <>
@@ -25,7 +25,7 @@ const Navbar = () => {
               }`}
             >
               {links.map((link) => (
-                <li key={link.link}>
+                <li key={link.id}>
                   <Link
                     href={link.link}
                     passHref
@@ -41,12 +41,12 @@ const Navbar = () => {
           </div>
         </div>
         <button
-          className="lg:hidden py-4 "
+          className="lg:hidden py-4  text-3xl "
           onClick={() => {
             setToggle(!toggle);
           }}
         >
-          Toggle
+          {toggle ? "-" : "+"}
         </button>
       </header>
     </>
