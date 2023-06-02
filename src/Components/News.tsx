@@ -117,13 +117,15 @@ const News = ({ isNotNews }: newsType) => {
           >
             <option value=""></option>
             {newsSources.length === 0 ? (
-              <option value="">No Sources Found Yet</option>
+              <option value="" key={1}>
+                No Sources Found Yet
+              </option>
             ) : (
               newsSources.map((source) => (
                 <option
+                  key={source.id}
                   value={source.id}
                   title={source.description}
-                  key={source.id}
                 >
                   {source.name}
                 </option>
