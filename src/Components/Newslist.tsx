@@ -15,8 +15,7 @@ const Newslist = ({ newsList, isLoading, isSinglePage }: newsListType) => {
     };
     return (
       <p className="font-bold text-center text-[red] text-[20px]">
-        This data is not persistent so it,s state was lost when you
-        moved back
+        This data is not persistent so it,s state was lost when you moved back
       </p>
     );
   }
@@ -30,12 +29,16 @@ const Newslist = ({ newsList, isLoading, isSinglePage }: newsListType) => {
         !isLoading
           ? isSinglePage
             ? "customShadow flex flex-col w-[90%] m-auto mt-5"
-            : "customShadow aspect-auto"
+            : `${id ? "customShadow aspect-auto" : ""}`
           : ""
       }
       key={id}
     >
-      <h1 className="font-bold text-center px-2 py-4">
+      <h1
+        className={`font-bold text-center px-2 py-4  ${
+          isSinglePage ? "" : " text-ellipsis overflow-hidden whitespace-nowrap"
+        }`}
+      >
         {isLoading ? "" : title}
       </h1>
       {isSinglePage ? (
@@ -49,19 +52,35 @@ const Newslist = ({ newsList, isLoading, isSinglePage }: newsListType) => {
       )}
       {!isLoading ? (
         <figcaption className="px-2 py-2  relative">
-          <p className="overflow-hidden text-ellipsis whitespace-nowrap">
+          <h3
+            className={`text-[18px]${
+              isSinglePage
+                ? ""
+                : " text-ellipsis overflow-hidden whitespace-nowrap"
+            }`}
+          >
             {description}
-          </p>
+          </h3>
 
-          <p className="text-[14px] sm:text-[16px] overflow-hidden text-ellipsis whitespace-nowrap flex gap-1 font-bold ">
+          <p
+            className={`text-[14px] sm:text-[16px] ${
+              isSinglePage
+                ? ""
+                : " text-ellipsis overflow-hidden whitespace-nowrap"
+            }flex gap-1 font-bold `}
+          >
             {author ? author : ""}
           </p>
-          <h5 className="my-2">
-            {" "}
-            <span>Published:</span>{" "}
-            {publishedDate <= 0 ? "Today" : `${publishedDate} days ago`}
-          </h5>
-          {isSinglePage ? <p>{content}</p> : ""}
+          {publishedDate ? (
+            <h5 className="my-2">
+              {" "}
+              <span>Published:</span>{" "}
+              {publishedDate <= 0 ? "Today" : `${publishedDate} days ago`}
+            </h5>
+          ) : (
+            ""
+          )}
+          {isSinglePage ? <p className="text-[18px]">{content}</p> : ""}
         </figcaption>
       ) : (
         ""
@@ -73,9 +92,11 @@ const Newslist = ({ newsList, isLoading, isSinglePage }: newsListType) => {
           <Link
             passHref
             href={`Home/${id}`}
-            className="bg-green-500 w-[95%] block text-center  py-2  text-white  mx-2 my-1 mb-2 h-10 rounded-md bottom-0 top-3"
+            className={`${
+              id ? "bg-green-500" : ""
+            } w-[95%] block text-center  py-2  text-white  mx-2 my-1 mb-2 h-10 rounded-md bottom-0 top-3`}
           >
-            Read Full News
+            {id ? "Read Full News" : ""}
           </Link>
         )
       ) : (
