@@ -51,7 +51,7 @@ const Newslist = ({ newsList, isLoading, isSinglePage }: newsListType) => {
         ""
       )}
       {!isLoading ? (
-        <figcaption className="px-2 py-2  relative">
+        <figcaption className="px-2 py-2  relative" key={id}>
           <h3
             className={`text-[18px]${
               isSinglePage
