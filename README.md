@@ -1,6 +1,17 @@
+## Instructions for setting project up locally
+* Make Sure `Git` and `Node js` is installed on your Personal Computer
+* Fork the repository(This is optional)
+* Clone the repo using `git clone` command and run the command on your PC `Terminal` or `Command Prompt`
+* After Sucessful Cloning change directory to root_folder of the project using `cd [name of directory/Folder]`
+* After Changing directory to root_folder type and run `npm install` and wait as the command sets up and install dependencies used in the project
+* After Successful installation type `npm run dev` to set up a local development server for the project
+* After doing the above steps open your browser and  type in `localhost:3000` to see the project live
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+
 
 First, run the development server:
 
