@@ -53,7 +53,7 @@ const News = ({ isNotNews }: newsType) => {
       articleId;
       dispatch(getAllNews(articleId));
     }
-  }, [newsSource, articleId]);
+  }, [newsSource, articleId, dispatch]);
   /* This function is used by the react-paginate component to know the current page number index that was clicked by user */
 
   const handlePageClick = (page: { selected: number }) => {
