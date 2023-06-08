@@ -140,7 +140,7 @@ const News = ({ isNotNews }: newsType) => {
           <p className="text-center text-[20px] text-[red]">{`${errorMessage}`}</p>
         ) : (
           CurrentPageData.map((article) => (
-            <Newslist newsList={article} isLoading={loading} />
+            <Newslist newsList={article} isLoading={loading} key={article.id} />
           ))
         )}
       </div>
