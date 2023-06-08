@@ -35,7 +35,7 @@ let isRequestExceeded = false;
 /* Redux Function that will be called using dispatch hook which Fetches latest news articles with data provided from the news api and returns the  response from the api */
 export const getAllNews = createAsyncThunk("news", async (topic: string) => {
   const response = await fetch(
-    `https://newsapi.org/v2/everything?q=${topic}&from=2023-05-31&to=${currentDate}&sortBy=popularity&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+    `http://newsapi.org/v2/everything?q=${topic}&from=2023-05-31&to=${currentDate}&sortBy=popularity&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
   );
   const newsData = await response.json();
   if (response.status === 429) {
@@ -51,8 +51,8 @@ export const getAllNewsSources = createAsyncThunk(
   async (sourceData: string) => {
     const response = await fetch(
       sourceData
-        ? `https://newsapi.org/v2/everything?sources=${sourceData}&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
-        : `https://newsapi.org/v2/top-headlines/sources?&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+        ? `http://newsapi.org/v2/everything?sources=${sourceData}&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+        : `http://newsapi.org/v2/top-headlines/sources?&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
     );
     if (sourceData) {
       isSourceDataPresent = true;
