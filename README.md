@@ -1,7 +1,7 @@
-## Instructions for setting project up locally
+## Instructions for setting the project up locally
 * Make Sure `Git` and `Node js` is installed on your Personal Computer
 * Fork the repository
-* Clone the repo using `git clone` command and run the command on your PC `Terminal` or `Command Prompt`
+* Clone the repo using the `git clone command and run the command on your PC `Terminal` or `Command Prompt`
 * After Sucessful Cloning change directory to root_folder of the project using `cd [name of directory/Folder]`
 * After Changing directory to root_folder type and run `npm install` and wait as the command sets up and install dependencies used in the project
 * After Successful installation type `npm run dev` to set up a local development server for the project
