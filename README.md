@@ -3,7 +3,7 @@
 * Fork the repository
 * Clone the repo using the `git clone command and run the command on your PC `Terminal` or `Command Prompt`
 * After Successful Cloning change the directory to root_folder of the project using `cd [name of directory/Folder]`
-* After Changing the directory to root_folder type and run `npm install` and wait as the command sets up and install dependencies used in the project
+* After Changing the directory to root_folder type and run `npm install` and wait as the command sets up and installs dependencies used in the project
 * After Successful installation type `npm run dev` to set up a local development server for the project
 * After doing the above steps open your browser and  type in `localhost:3000` to see the project live
 * All the above
@@ -21,7 +21,6 @@ npm run dev
 # or
 yarn dev
 # or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
