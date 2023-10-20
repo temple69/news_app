@@ -6,7 +6,7 @@
 * After Changing the directory to root_folder type and run `npm install` and wait as the command sets up and installs dependencies used in the project
 * After Successful installation type `npm run dev` to set up a local development server for the project
 * After doing the above steps open your browser and  type in `localhost:3000` to see the project live
-* All the above commands shuld be run on
+* All the above commands shuld be run on terminal 
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
